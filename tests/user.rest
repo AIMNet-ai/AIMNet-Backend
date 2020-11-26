@@ -1,4 +1,4 @@
-POST http://localhost:5000/login HTTP/1.1
+POST http://localhost:5000/api/login HTTP/1.1
 content-type: application/json
 
 {
@@ -7,7 +7,7 @@ content-type: application/json
 }
 ###
 
-POST http://127.0.0.1:5000/signup HTTP/1.1
+POST http://127.0.0.1:5000/api/signup HTTP/1.1
 content-type: application/json
 
 {
