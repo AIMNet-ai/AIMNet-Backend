@@ -76,8 +76,8 @@ ep = 90
 ln = 500
 #ln = int(input("\n3. Enter the length of music sequence you want to generate. Typical number is between 300-600. Too small number will generate hardly generate any sequence: "))
 ar = 55
-music = generate_sequence(ep, ar, ln)
+#music = generate_sequence(ep, ar, ln)
 
-print("\nMUSIC SEQUENCE GENERATED: \n")
+# print("\nMUSIC SEQUENCE GENERATED: \n")
 
-print(music)
+# print(music)

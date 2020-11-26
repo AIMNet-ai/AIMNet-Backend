@@ -1,0 +1,8 @@
+POST http://localhost:5000/api/generateMusic HTTP/1.1
+content-type: application/json
+
+{
+    "note":55,
+    "email": "user6@mail.com"
+}
+###
