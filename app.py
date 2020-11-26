@@ -32,13 +32,11 @@ def getprofile_route():
 @app.route('/api/updateprofile',methods=["POST"])
 def updateprofile_route():
     data = request.get_json()
-    name = data['name']
-    username = data['username']
-    profilePic = data['profilePic']
-    bio = data['bio']
     print(data)
     return profile.updateProfile(data["email"],data,mongo)   
 
+
+##############################################
 
 if  __name__ == "__main__":
     app.run(debug=True)
