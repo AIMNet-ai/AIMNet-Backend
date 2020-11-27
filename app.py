@@ -1,9 +1,11 @@
 from flask import Flask,jsonify,request
+from flask_cors import CORS
 from flask_pymongo import PyMongo
 import json 
 import user,profile,tracks
-# import model_helper
+import model_helper
 app = Flask(__name__)
+CORS(app)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/aimnet"
 mongo = PyMongo(app)
 
@@ -37,11 +39,11 @@ def updateprofile_route():
 
 
 ##############################################
-# # Generating Music by notes
-# @app.route('/api/generateMusic',methods=["POST"])
-# def generateMusic_route():
-#     data = request.get_json()
-#     return model_helper.genrateMusicByNote(data['note'],data["email"],mongo)  
+# Generating Music by notes
+@app.route('/api/generateMusic',methods=["POST"])
+def generateMusic_route():
+    data = request.get_json()
+    return model_helper.genrateMusicByNote(data['note'],data["email"],mongo)  
 
 ##############################################
 # Get all music tracks of the user
