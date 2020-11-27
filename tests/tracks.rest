@@ -12,3 +12,12 @@ content-type: application/json
 {
     "email": "user6@mail.com"
 }
+###
+
+POST http://127.0.0.1:5000/api/toggletracks HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user6@mail.com",
+    "_id": "5fbf79f97942daa199238e66"
+}

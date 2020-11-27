@@ -1,8 +1,8 @@
 from flask import Flask,jsonify,request
 from flask_pymongo import PyMongo
 import json 
-import user,profile,model_helper,tracks
-
+import user,profile,tracks
+# import model_helper
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/aimnet"
 mongo = PyMongo(app)
@@ -57,6 +57,14 @@ def getfavtracks_route():
     data = request.get_json()
     print(data)
     return tracks.getFavMusicTracks(data["email"],mongo)   
+
+
+# Favourite/Unfavourite the tracks
+@app.route('/api/toggletracks',methods=["POST"])
+def booltrackfav_route():
+    data = request.get_json()
+    print(data)
+    return tracks.toggleFavTrack(data["email"],data["_id"],mongo)   
 
 
 if  __name__ == "__main__":
